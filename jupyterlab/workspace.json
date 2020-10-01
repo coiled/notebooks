@@ -1,0 +1,105 @@
+{
+    "data": {
+        "file-browser-filebrowser:cwd": {
+            "path": ""
+        },
+        "layout-restorer:data": {
+            "main": {
+                "dock": {
+                    "type": "split-area",
+                    "orientation": "horizontal",
+                    "sizes": [
+                        0.5,
+                        0.5
+                    ],
+                    "children": [
+                        {
+                            "type": "tab-area",
+                            "currentIndex": 0,
+                            "widgets": [
+                                "notebook:jupyterlab.ipynb"
+                            ]
+                        },
+                        {
+                            "type": "split-area",
+                            "orientation": "vertical",
+                            "sizes": [
+                                0.3135581893384421,
+                                0.33692004590199504,
+                                0.34952176475956287
+                            ],
+                            "children": [
+                                {
+                                    "type": "tab-area",
+                                    "currentIndex": 0,
+                                    "widgets": [
+                                        "dask-dashboard-launcher:individual-task-stream"
+                                    ]
+                                },
+                                {
+                                    "type": "tab-area",
+                                    "currentIndex": 0,
+                                    "widgets": [
+                                        "dask-dashboard-launcher:individual-progress"
+                                    ]
+                                },
+                                {
+                                    "type": "tab-area",
+                                    "currentIndex": 0,
+                                    "widgets": [
+                                        "dask-dashboard-launcher:individual-workers"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "mode": "multiple-document",
+                "current": "notebook:jupyterlab.ipynb"
+            },
+            "left": {
+                "collapsed": true,
+                "widgets": [
+                    "filebrowser",
+                    "running-sessions",
+                    "dask-dashboard-launcher",
+                    "command-palette",
+                    "jp-property-inspector",
+                    "tab-manager",
+                    "extensionmanager.main-view"
+                ]
+            },
+            "right": {
+                "collapsed": true,
+                "widgets": []
+            }
+        },
+        "notebook:jupyterlab.ipynb": {
+            "data": {
+                "path": "jupyterlab.ipynb",
+                "factory": "Notebook"
+            }
+        },
+        "dask-dashboard-launcher:individual-task-stream": {
+            "data": {
+                "route": "individual-task-stream",
+                "label": "Task Stream"
+            }
+        },
+        "dask-dashboard-launcher:individual-progress": {
+            "data": {
+                "route": "individual-progress",
+                "label": "Progress"
+            }
+        },
+        "dask-dashboard-launcher:individual-workers": {
+            "data": {
+                "route": "individual-workers",
+                "label": "Workers"
+            }
+        }
+    },
+    "metadata": {
+        "id": "/lab"
+    }
+}

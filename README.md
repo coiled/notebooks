@@ -1,2 +1,1 @@
-# notebooks
-Coiled example notebooks
+# Coiled Notebooks
