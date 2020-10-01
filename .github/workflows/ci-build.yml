@@ -10,6 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        example: ["quickstart", "scaling-xgboost", "optuna-xgboost", "jupyterlab"]
     env:
       DASK_COILED__SERVER: https://cloud.coiled.io
       DASK_COILED__TOKEN: ${{ secrets.DASK_COILED__TOKEN }}
@@ -24,18 +28,6 @@ jobs:
       - name: Install Coiled
         run: python -m pip install coiled
 
-      - name: Build quickstart notebook
-        run: python quickstart/create-notebook.py
-        working-directory: quickstart
-
-      - name: Build scaling xgboost notebook
-        run: python scaling-xgboost/create-notebook.py
-        working-directory: scaling-xgboost
-
-      - name: Build optuna notebook
-        run: python optuna-xgboost/create-notebook.py
-        working-directory: optuna-xgboost
-
-      - name: Build jupyterlab notebook
-        run: python jupyterlab/create-notebook.py
-        working-directory: jupyterlab
+      - name: Build ${{ matrix.example }} notebook
+        run: python create-notebook.py
+        working-directory: ${{ matrix.example }}
