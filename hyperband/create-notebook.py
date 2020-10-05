@@ -2,7 +2,6 @@ import coiled
 import yaml
 
 software_name = "coiled-examples/hyperband-optimization"
-coiled.delete_software_environment(name=software_name)
 coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",
