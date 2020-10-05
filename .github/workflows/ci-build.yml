@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        example: ["quickstart", "scaling-xgboost", "optuna-xgboost", "jupyterlab"]
+        example: ["quickstart", "scaling-xgboost", "optuna-xgboost", "jupyterlab", "hyperband"]
     env:
       DASK_COILED__SERVER: https://cloud.coiled.io
       DASK_COILED__TOKEN: ${{ secrets.DASK_COILED__TOKEN }}
