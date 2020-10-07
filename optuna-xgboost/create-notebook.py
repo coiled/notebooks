@@ -15,7 +15,6 @@ conda = {
 }
 
 software_name = "coiled-examples/optuna-xgboost-notebook"
-coiled.delete_software_environment(name=software_name)
 coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",

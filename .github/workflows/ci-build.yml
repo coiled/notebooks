@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-python@v1
 
       - name: Install Coiled
-        run: python -m pip install coiled fsspec[http]
+        run: python -m pip install coiled
 
       - name: Build ${{ matrix.example }} notebook
         run: python create-notebook.py
