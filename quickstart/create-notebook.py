@@ -1,7 +1,6 @@
 import coiled
 
 software_name = "coiled-examples/quickstart-notebook"
-coiled.delete_software_environment(name=software_name)
 coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",

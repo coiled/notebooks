@@ -1,18 +1,28 @@
 import coiled
-import fsspec
-import yaml
 
-path = "https://raw.githubusercontent.com/coiled/coiled-examples/master/scaling-xgboost/environment.yml"
-with fsspec.open(path, "r") as f:
-    conda = yaml.safe_load(f.read())
+conda = {
+    "channels": ["conda-forge"],
+    "dependencies": [
+        "python=3.8",
+        "dask>=2.23.0",
+        "coiled=0.0.25",
+        "pandas>=1.1.0",
+        "xgboost",
+        "dask-ml",
+        "dask-xgboost",
+        "scikit-learn",
+        "s3fs",
+        "python-snappy",
+        "fastparquet",
+        "matplotlib",
+    ],
+}
 
 software_name = "coiled-examples/scaling-xgboost-notebook"
-coiled.delete_software_environment(name=software_name)
 coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",
     conda=conda,
-    pip=["coiled==0.0.25"],
 )
 
 coiled.create_job_configuration(
