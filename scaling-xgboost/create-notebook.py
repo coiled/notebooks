@@ -4,7 +4,6 @@ conda = {
     "channels": ["conda-forge"],
     "dependencies": [
         "dask>=2.23.0",
-        "coiled=0.0.27",
         "pandas>=1.1.0",
         "xgboost",
         "dask-ml",
@@ -22,6 +21,7 @@ coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",
     conda=conda,
+    pip=["coiled==0.0.27"]
 )
 
 coiled.create_job_configuration(
