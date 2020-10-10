@@ -3,7 +3,6 @@ import coiled
 conda = {
     "channels": ["conda-forge"],
     "dependencies": [
-        "coiled==0.0.27",
         "dask",
         "optuna",
         "numpy",
@@ -18,7 +17,7 @@ coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",
     conda=conda,
-    pip=["dask-optuna"],
+    pip=["dask-optuna", "coiled==0.0.27"],
 )
 
 coiled.create_job_configuration(
