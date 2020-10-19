@@ -16,9 +16,17 @@ conda = {
     ],
 }
 
-software_name = "coiled-examples/scaling-xgboost-notebook"
+# Create cluster software environment
+software_name = "examples/scaling-xgboost"
 coiled.create_software_environment(
     name=software_name,
+    conda=conda,
+)
+
+# Create notebook job software environment
+software_notebook_name = software_name + "-notebook"
+coiled.create_software_environment(
+    name=software_notebook_name,
     container="coiled/notebook:latest",
     conda=conda,
     pip=["coiled==0.0.27"]
@@ -26,7 +34,7 @@ coiled.create_software_environment(
 
 coiled.create_job_configuration(
     name="coiled/scaling-xgboost",
-    software=software_name,
+    software=software_notebook_name,
     command=[
         "/bin/bash",
         "run.sh",

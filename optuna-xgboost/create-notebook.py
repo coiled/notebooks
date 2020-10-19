@@ -12,9 +12,18 @@ conda = {
     ],
 }
 
-software_name = "coiled-examples/optuna-xgboost-notebook"
+# Create cluster software environment
+software_name = "examples/optuna-xgboost"
 coiled.create_software_environment(
     name=software_name,
+    conda=conda,
+    pip=["dask-optuna"],
+)
+
+# Create notebook job software environment
+software_notebook_name = software_name + "-notebook"
+coiled.create_software_environment(
+    name=software_notebook_name,
     container="coiled/notebook:latest",
     conda=conda,
     pip=["dask-optuna", "coiled==0.0.27"],
@@ -22,7 +31,7 @@ coiled.create_software_environment(
 
 coiled.create_job_configuration(
     name="coiled/optuna",
-    software=software_name,
+    software=software_notebook_name,
     command=[
         "/bin/bash",
         "run.sh",

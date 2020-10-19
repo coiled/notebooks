@@ -1,6 +1,6 @@
 import coiled
 
-software_name = "coiled-examples/quickstart-notebook"
+software_name = "examples/quickstart-notebook"
 coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",
