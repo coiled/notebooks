@@ -1,0 +1,44 @@
+{
+    "data": {
+        "file-browser-filebrowser:cwd": {
+            "path": ""
+        },
+        "layout-restorer:data": {
+            "main": {
+                "dock": {
+                    "type": "tab-area",
+                    "currentIndex": 0,
+                    "widgets": [
+                        "notebook:dask-sql.ipynb"
+                    ]
+                },
+                "mode": "multiple-document",
+                "current": "notebook:dask-sql.ipynb"
+            },
+            "left": {
+                "collapsed": true,
+                "widgets": [
+                    "filebrowser",
+                    "running-sessions",
+                    "command-palette",
+                    "jp-property-inspector",
+                    "tab-manager",
+                    "extensionmanager.main-view"
+                ]
+            },
+            "right": {
+                "collapsed": true,
+                "widgets": []
+            }
+        },
+        "notebook:dask-sql.ipynb": {
+            "data": {
+                "path": "dask-sql.ipynb",
+                "factory": "Notebook"
+            }
+        }
+    },
+    "metadata": {
+        "id": "/lab"
+    }
+}
