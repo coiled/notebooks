@@ -8,7 +8,7 @@ coiled.create_software_environment(
 )
 
 coiled.create_job_configuration(
-    name="coiled/jupyterlab",
+    name="examples/jupyterlab",
     software=software_name,
     command=[
         "/bin/bash",

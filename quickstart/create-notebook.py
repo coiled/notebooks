@@ -8,7 +8,7 @@ coiled.create_software_environment(
 )
 
 coiled.create_job_configuration(
-    name="coiled/quickstart",
+    name="examples/quickstart",
     software=software_name,
     command=[
         "/bin/bash",
