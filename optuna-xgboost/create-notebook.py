@@ -30,7 +30,7 @@ coiled.create_software_environment(
 )
 
 coiled.create_job_configuration(
-    name="coiled/optuna",
+    name="examples/optuna",
     software=software_notebook_name,
     command=[
         "/bin/bash",

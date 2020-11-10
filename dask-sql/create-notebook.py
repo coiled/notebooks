@@ -27,7 +27,7 @@ coiled.create_software_environment(
 )
 
 coiled.create_job_configuration(
-    name="coiled/dask-sql",
+    name="examples/dask-sql",
     software=software_notebook_name,
     command=[
         "/bin/bash",

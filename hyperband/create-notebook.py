@@ -32,7 +32,7 @@ coiled.create_software_environment(
 )
 
 coiled.create_job_configuration(
-    name="coiled/hyperband-optimization",
+    name="examples/hyperband-optimization",
     software=software_notebook_name,
     command=[
         "/bin/bash",
