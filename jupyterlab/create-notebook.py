@@ -4,7 +4,7 @@ software_name = "examples/jupyterlab-notebook"
 coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",
-    pip=["coiled==0.0.27", "traitlets==5.0.4"],
+    pip=["coiled==0.0.28", "traitlets==5.0.4"],
 )
 
 coiled.create_job_configuration(
