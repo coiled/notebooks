@@ -4,6 +4,7 @@ conda = {
     "channels": ["conda-forge", "pytorch", "defaults"],
     "dependencies": [
         "dask>=2.29.0",
+        "coiled=0.0.28",
         "numpy",
         "pandas>=1.1.0",
         "dask-ml",
@@ -28,7 +29,6 @@ coiled.create_software_environment(
     name=software_notebook_name,
     container="coiled/notebook:latest",
     conda=conda,
-    pip=["coiled==0.0.28"]
 )
 
 coiled.create_job_configuration(

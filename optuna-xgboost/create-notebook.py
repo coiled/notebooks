@@ -4,6 +4,7 @@ conda = {
     "channels": ["conda-forge"],
     "dependencies": [
         "dask",
+        "coiled=0.0.28",
         "optuna",
         "numpy",
         "scikit-learn",
@@ -26,7 +27,7 @@ coiled.create_software_environment(
     name=software_notebook_name,
     container="coiled/notebook:latest",
     conda=conda,
-    pip=["dask-optuna", "coiled==0.0.28"],
+    pip=["dask-optuna"],
 )
 
 coiled.create_job_configuration(

@@ -4,7 +4,7 @@ software_name = "examples/quickstart-notebook"
 coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",
-    pip=["coiled==0.0.28"]
+    conda={"channels": ["conda-forge"], "dependencies": ["coiled=0.0.28"]},
 )
 
 coiled.create_job_configuration(
