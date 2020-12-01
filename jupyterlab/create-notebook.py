@@ -1,10 +1,17 @@
 import coiled
 
+conda = {
+    "channels": ["conda-forge"],
+    "dependencies": [
+        "traitlets=5.0.4",
+        "coiled=0.0.30",
+    ],
+}
 software_name = "examples/jupyterlab-notebook"
 coiled.create_software_environment(
     name=software_name,
     container="coiled/notebook:latest",
-    pip=["coiled==0.0.30", "traitlets==5.0.4"],
+    conda=conda,
 )
 
 coiled.create_job_configuration(
