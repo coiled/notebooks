@@ -4,7 +4,7 @@ conda = {
     "channels": ["conda-forge"],
     "dependencies": [
         "traitlets=5.0.4",
-        "coiled=0.0.33",
+        "coiled=0.0.33 ",
     ],
 }
 software_name = "examples/jupyterlab-notebook"
