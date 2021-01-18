@@ -16,13 +16,13 @@ jobs:
         uses: jacobtomlinson/gha-anaconda-package-version@0.1.1
         with:
           org: "conda-forge"
-          package: "coiled=*([\d.]+)"
+          package: "coiled"
 
       - name: Find and replace Coiled version
         id: find_and_replace
         uses: jacobtomlinson/gha-find-replace@0.1.1
         with:
-          find: "coiled=.*"
+          find: "coiled=*([\d.]+)"
           replace: "coiled=${{ steps.latest_version.outputs.version }} "
 
       - name: Output changed files
