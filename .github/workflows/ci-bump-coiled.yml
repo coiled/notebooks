@@ -16,7 +16,7 @@ jobs:
         uses: jacobtomlinson/gha-anaconda-package-version@0.1.1
         with:
           org: "conda-forge"
-          package: "coiled=*[\d.]+"
+          package: "coiled=*[0-9.]+"
 
       - name: Find and replace Coiled version
         id: find_and_replace
