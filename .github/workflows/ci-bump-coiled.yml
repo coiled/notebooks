@@ -1,8 +1,8 @@
 name: Check for new Coiled version on conda-forge
 
-on: [push, pull_request]
-  # schedule:
-  #   - cron: "0 * * * *"
+on:
+  schedule:
+    - cron: "0 * * * *"
 
 jobs:
   check-version:
@@ -29,15 +29,15 @@ jobs:
       - name: Output changed files
         run: echo ${{ steps.find_and_replace.outputs.modifiedFiles }}
 
-      # - name: Create Pull Request
-      #   uses: peter-evans/create-pull-request@v2
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     commit-message: "Update Coiled version to ${{ steps.latest_version.outputs.version }}"
-      #     title: "Update Coiled version to ${{ steps.latest_version.outputs.version }}"
-      #     reviewers: "jrbourbeau"
-      #     branch: "upgrade-package-versions"
-      #     body: |
-      #       A new Coiled version has been detected.
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update Coiled version to ${{ steps.latest_version.outputs.version }}"
+          title: "Update Coiled version to ${{ steps.latest_version.outputs.version }}"
+          reviewers: "jrbourbeau"
+          branch: "upgrade-package-versions"
+          body: |
+            A new Coiled version has been detected.
 
-      #       Updated Coiled to `${{ steps.latest_version.outputs.version }}`.
+            Updated Coiled to `${{ steps.latest_version.outputs.version }}`.
