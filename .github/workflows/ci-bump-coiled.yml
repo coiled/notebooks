@@ -1,8 +1,8 @@
 name: Check for new Coiled version on conda-forge
 
-on:
-  schedule:
-    - cron: "0 * * * *"
+on: [push, pull_request]
+  # schedule:
+  #   - cron: "0 * * * *"
 
 jobs:
   check-version:
@@ -22,7 +22,7 @@ jobs:
         id: find_and_replace
         uses: jacobtomlinson/gha-find-replace@0.1.1
         with:
-          find: "coiled=*[0-9.]+"
+          find: "coiled=.*[0-9]+"
           replace: "coiled=${{ steps.latest_version.outputs.version }} "
           include: "create-notebook.py"
 
