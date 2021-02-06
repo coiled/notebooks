@@ -4,7 +4,7 @@ conda = {
     "channels": ["conda-forge"],
     "dependencies": [
         "dask",
-        "coiled=0.0.35",
+        "coiled=0.0.36",
         "optuna",
         "numpy",
         "scikit-learn",
