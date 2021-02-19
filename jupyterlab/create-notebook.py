@@ -3,6 +3,7 @@ import coiled
 conda = {
     "channels": ["conda-forge"],
     "dependencies": [
+        "python=3.8",
         "traitlets=5.0.4",
         "coiled=0.0.36",
     ],

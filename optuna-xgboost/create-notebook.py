@@ -3,6 +3,7 @@ import coiled
 conda = {
     "channels": ["conda-forge"],
     "dependencies": [
+        "python=3.8",
         "dask",
         "coiled=0.0.36",
         "optuna",
