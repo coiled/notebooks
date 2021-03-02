@@ -5,7 +5,7 @@ conda = {
     "dependencies": [
         "python=3.8",
         "dask",
-        "coiled=0.0.36",
+        "coiled=0.0.37",
         "optuna",
         "numpy",
         "scikit-learn",

@@ -5,7 +5,7 @@ conda = {
     "dependencies": [
         "python=3.8",
         "dask>=2.29.0",
-        "coiled=0.0.36",
+        "coiled=0.0.37",
         "numpy",
         "pandas>=1.1.0",
         "dask-ml",
