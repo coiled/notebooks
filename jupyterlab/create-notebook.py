@@ -5,7 +5,7 @@ conda = {
     "dependencies": [
         "python=3.8",
         "traitlets=5.0.4",
-        "coiled=0.0.36",
+        "coiled=0.0.37",
     ],
 }
 software_name = "examples/jupyterlab-notebook"
