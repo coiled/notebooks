@@ -1,29 +1,19 @@
 import coiled
 
-conda = {
-    "channels": ["conda-forge"],
-    "dependencies": [
-        "python=3.8",
-        "dask=2021.4.0",
-        "s3fs",
-    ],
-}
-
 # Create cluster software environment
 software_name = "examples/dask-sql"
 coiled.create_software_environment(
     name=software_name,
-    conda=conda,
+    conda="cluster-env.yaml",
 )
 
 # Create notebook job software environment
 software_notebook_name = software_name + "-notebook"
 # Add Dask-SQL and matplotlib to notebook software environment
-conda["dependencies"].extend(["dask-sql", "matplotlib", "coiled=0.0.38"])
 coiled.create_software_environment(
     name=software_notebook_name,
     container="coiled/notebook:latest",
-    conda=conda,
+    conda="notebook-env.yaml",
 )
 
 coiled.create_job_configuration(
