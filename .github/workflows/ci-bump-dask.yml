@@ -1,4 +1,4 @@
-name: Check for new Coiled version on conda-forge
+name: Check for new dask version on conda-forge
 
 on:
   schedule:
@@ -11,19 +11,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Get latest Coiled version
+      - name: Get latest dask version
         id: latest_version
         uses: jacobtomlinson/gha-anaconda-package-version@0.1.1
         with:
           org: "conda-forge"
-          package: "coiled"
+          package: "dask"
 
-      - name: Find and replace Coiled version
+      - name: Find and replace dask version
         id: find_and_replace
         uses: jacobtomlinson/gha-find-replace@0.1.1
         with:
-          find: "coiled=.*[0-9]+"
-          replace: "coiled=${{ steps.latest_version.outputs.version }}"
+          find: "dask=.*[0-9]+"
+          replace: "dask=${{ steps.latest_version.outputs.version }}"
           include: "create-notebook.py"
 
       - name: Output changed files
@@ -33,11 +33,11 @@ jobs:
         uses: peter-evans/create-pull-request@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update Coiled version to ${{ steps.latest_version.outputs.version }}"
-          title: "Update Coiled version to ${{ steps.latest_version.outputs.version }}"
-          reviewers: "jrbourbeau"
+          commit-message: "Update dask version to ${{ steps.latest_version.outputs.version }}"
+          title: "Update dask version to ${{ steps.latest_version.outputs.version }}"
+          reviewers: "jrbourbeau,ian-r-rose"
           branch: "upgrade-package-versions"
           body: |
-            A new Coiled version has been detected.
+            A new dask version has been detected.
 
-            Updated Coiled to `${{ steps.latest_version.outputs.version }}`.
+            Updated dask to `${{ steps.latest_version.outputs.version }}`.

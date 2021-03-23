@@ -6,7 +6,7 @@ coiled.create_software_environment(
     container="coiled/notebook:latest",
     conda={
         "channels": ["conda-forge"],
-        "dependencies": ["python=3.8", "coiled=0.0.37"],
+        "dependencies": ["python=3.8", "coiled=0.0.37", "dask=2021.03.0"]
     },
 )
 
