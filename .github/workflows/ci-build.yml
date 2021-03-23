@@ -21,7 +21,7 @@ jobs:
             token-name: SANDBOX_TOKEN
     env:
       DASK_COILED__SERVER: ${{ matrix.server }}
-      DASK_COILED__TOKEN: ${{ secrets[matrix.token_name] }}
+      DASK_COILED__TOKEN: ${{ secrets[matrix.token-name] }}
 
     steps:
       - name: Checkout source
