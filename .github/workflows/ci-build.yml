@@ -12,9 +12,16 @@ jobs:
       fail-fast: false
       matrix:
         example: ["quickstart", "scaling-xgboost", "optuna-xgboost", "jupyterlab", "hyperband", "dask-sql"]
+        server: ["https://cloud.coiled.io", "https://sandbox.coiledhq.com"]
+        include:
+          - server: "https://cloud.coiled.io"
+            token-name: CLOUD_TOKEN
+
+          - server: "https://sandbox.coiledhq.com"
+            token-name: SANDBOX_TOKEN
     env:
-      DASK_COILED__SERVER: https://cloud.coiled.io
-      DASK_COILED__TOKEN: ${{ secrets.DASK_COILED__TOKEN }}
+      DASK_COILED__SERVER: ${{ matrix.server }}
+      DASK_COILED__TOKEN: ${{ secrets[matrix.token_name] }}
 
     steps:
       - name: Checkout source
