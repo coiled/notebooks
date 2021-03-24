@@ -1,4 +1,4 @@
-name: Check for new Coiled version on conda-forge
+name: Check for new Coiled and dask versions on conda-forge
 
 on:
   schedule:
@@ -11,33 +11,52 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Get latest Coiled version
-        id: latest_version
+        id: latest_version_coiled
         uses: jacobtomlinson/gha-anaconda-package-version@0.1.1
         with:
           org: "conda-forge"
           package: "coiled"
 
       - name: Find and replace Coiled version
-        id: find_and_replace
+        id: find_and_replace_coiled
         uses: jacobtomlinson/gha-find-replace@0.1.1
         with:
           find: "coiled=.*[0-9]+"
-          replace: "coiled=${{ steps.latest_version.outputs.version }}"
+          replace: "coiled=${{ steps.latest_version_coiled.outputs.version }}"
+          include: "create-notebook.py"
+
+      - name: Get latest dask version
+        id: latest_version_dask
+        uses: jacobtomlinson/gha-anaconda-package-version@0.1.1
+        with:
+          org: "conda-forge"
+          package: "dask"
+
+      - name: Find and replace dask version
+        id: find_and_replace_dask
+        uses: jacobtomlinson/gha-find-replace@0.1.1
+        with:
+          find: "dask=.*[0-9]+"
+          replace: "dask=${{ steps.latest_version_dask.outputs.version }}"
           include: "create-notebook.py"
 
       - name: Output changed files
-        run: echo ${{ steps.find_and_replace.outputs.modifiedFiles }}
+        run: |
+          echo ${{ steps.find_and_replace_coiled.outputs.modifiedFiles }}
+          echo ${{ steps.find_and_replace_dask.outputs.modifiedFiles }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update Coiled version to ${{ steps.latest_version.outputs.version }}"
-          title: "Update Coiled version to ${{ steps.latest_version.outputs.version }}"
-          reviewers: "jrbourbeau"
+          commit-message: "Update Coiled version to ${{ steps.latest_version_coiled.outputs.version }}, update dask version to ${{ steps.latest_version_dask.outputs.version }}"
+          title: "Update Coiled version to ${{ steps.latest_version_coiled.outputs.version }}, update dask version to ${{ steps.latest_version_dask.outputs.version }}"
+          reviewers: "jrbourbeau, ian-r-rose"
           branch: "upgrade-package-versions"
           body: |
-            A new Coiled version has been detected.
+            A new version of coiled or dask has been detected.
 
-            Updated Coiled to `${{ steps.latest_version.outputs.version }}`.
+            Coiled is now `${{ steps.latest_version_coiled.outputs.version }}`.
+            Dask is now `${{ steps.latest_version_dask.outputs.version }}`.
