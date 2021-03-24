@@ -5,7 +5,7 @@ conda = {
     "dependencies": [
         "python=3.8",
         "traitlets=5.0.4",
-        "dask=2021.03.0",
+        "dask=2021.3.0",
         "coiled=0.0.37",
     ],
 }
