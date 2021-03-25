@@ -6,7 +6,7 @@ conda = {
         "python=3.8",
         "traitlets=5.0.4",
         "dask=2021.3.0",
-        "coiled=0.0.37",
+        "coiled=0.0.38",
     ],
 }
 software_name = "examples/jupyterlab-notebook"

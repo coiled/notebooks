@@ -19,7 +19,7 @@ coiled.create_software_environment(
 # Create notebook job software environment
 software_notebook_name = software_name + "-notebook"
 # Add Dask-SQL and matplotlib to notebook software environment
-conda["dependencies"].extend(["dask-sql", "matplotlib", "coiled=0.0.37"])
+conda["dependencies"].extend(["dask-sql", "matplotlib", "coiled=0.0.38"])
 coiled.create_software_environment(
     name=software_notebook_name,
     container="coiled/notebook:latest",
