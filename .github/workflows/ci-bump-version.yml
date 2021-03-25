@@ -23,7 +23,7 @@ jobs:
         id: find_and_replace_coiled
         uses: jacobtomlinson/gha-find-replace@0.1.1
         with:
-          find: "coiled=.*[0-9]+"
+          find: "coiled=[.0-9]+"
           replace: "coiled=${{ steps.latest_version_coiled.outputs.version }}"
           include: "create-notebook.py"
 
@@ -38,7 +38,7 @@ jobs:
         id: find_and_replace_dask
         uses: jacobtomlinson/gha-find-replace@0.1.1
         with:
-          find: "dask=.*[0-9]+"
+          find: "dask=[.0-9]+"
           replace: "dask=${{ steps.latest_version_dask.outputs.version }}"
           include: "create-notebook.py"
 
