@@ -4,7 +4,7 @@ conda = {
     "channels": ["conda-forge", "pytorch", "defaults"],
     "dependencies": [
         "python=3.8",
-        "dask=2021.3.0",
+        "dask=2021.3.1",
         "coiled=0.0.38",
         "numpy",
         "pandas>=1.1.0",
