@@ -1,0 +1,8 @@
+name: coiled
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - coiled
+  - dask
+  - distributed
