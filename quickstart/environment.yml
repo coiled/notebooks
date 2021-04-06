@@ -1,4 +1,4 @@
-name: coiled
+name: quickstart
 channels:
   - conda-forge
   - defaults
