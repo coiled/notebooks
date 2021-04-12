@@ -1,28 +1,10 @@
 import coiled
 
-conda = {
-    "channels": ["conda-forge"],
-    "dependencies": [
-        "python=3.8",
-        "dask=2021.4.0",
-        "coiled=0.0.38",
-        "pandas>=1.1.0",
-        "xgboost",
-        "dask-ml",
-        "dask-xgboost",
-        "scikit-learn",
-        "s3fs",
-        "python-snappy",
-        "fastparquet",
-        "matplotlib",
-    ],
-}
-
 # Create cluster software environment
 software_name = "examples/scaling-xgboost"
 coiled.create_software_environment(
     name=software_name,
-    conda=conda,
+    conda="environment.yaml",
 )
 
 # Create notebook job software environment
@@ -30,7 +12,7 @@ software_notebook_name = software_name + "-notebook"
 coiled.create_software_environment(
     name=software_notebook_name,
     container="coiled/notebook:latest",
-    conda=conda,
+    conda="environment.yaml",
 )
 
 coiled.create_job_configuration(

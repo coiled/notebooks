@@ -1,0 +1,9 @@
+channels:
+- conda-forge
+dependencies:
+- python=3.8
+- coiled=0.0.38
+- dask=2021.4.0
+- dask-sql
+- matplotlib
+- s3fs
