@@ -25,7 +25,8 @@ jobs:
         with:
           find: "coiled=[.0-9]+"
           replace: "coiled=${{ steps.latest_version_coiled.outputs.version }}"
-          include: "create-notebook.py"
+          include: ".+\.ya?ml"
+          exclude: "^\.git.*"
 
       - name: Get latest dask version
         id: latest_version_dask
@@ -40,7 +41,9 @@ jobs:
         with:
           find: "dask=[.0-9]+"
           replace: "dask=${{ steps.latest_version_dask.outputs.version }}"
-          include: "create-notebook.py"
+          include: ".+\.ya?ml"
+          exclude: "^\.git.*"
+
 
       - name: Output changed files
         run: |
