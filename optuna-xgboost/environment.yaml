@@ -4,7 +4,7 @@ dependencies:
 - python=3.8
 - dask=2021.4.0
 - coiled=0.0.38
-- optuna
+- optuna=2.3.0
 - numpy
 - scikit-learn
 - xgboost
