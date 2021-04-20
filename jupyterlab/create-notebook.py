@@ -11,6 +11,11 @@ coiled.create_job_configuration(
     name="examples/jupyterlab",
     software=software_name,
     command=[
+        "conda",
+        "run",
+        "-n",
+        "coiled",
+        "--no-capture-output",
         "/bin/bash",
         "run.sh",
     ],
