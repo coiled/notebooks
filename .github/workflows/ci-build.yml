@@ -1,4 +1,3 @@
-
 name: Build notebooks
 
 on:
@@ -11,13 +10,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        example: ["quickstart", "scaling-xgboost", "optuna-xgboost", "jupyterlab", "hyperband", "dask-sql"]
-        server: ["https://cloud.coiled.io", "https://sandbox.coiledhq.com"]
+        example:
+          [
+            "quickstart",
+            "scaling-xgboost",
+            "optuna-xgboost",
+            "jupyterlab",
+            "hyperband",
+            "dask-sql",
+          ]
+        server: ["https://cloud.coiled.io", "https://staging.coiledhq.com"]
         include:
           - server: "https://cloud.coiled.io"
             token-name: CLOUD_TOKEN
 
-          - server: "https://sandbox.coiledhq.com"
+          - server: "https://staging.coiledhq.com"
             token-name: SANDBOX_TOKEN
     env:
       DASK_COILED__SERVER: ${{ matrix.server }}
