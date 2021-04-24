@@ -1,7 +1,7 @@
 channels:
 - conda-forge
 dependencies:
-- dask=2021.4.0
+- dask=2021.4.1
 - coiled=0.0.38
 - optuna=2.3.0
 - numpy
