@@ -2,5 +2,5 @@ channels:
 - conda-forge
 dependencies:
 - traitlets=5.0.4
-- coiled=0.0.38
+- coiled=0.0.39
 - dask=2021.4.1
