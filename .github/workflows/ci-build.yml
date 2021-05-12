@@ -2,7 +2,7 @@ name: Build notebooks
 
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   build:
