@@ -3,6 +3,6 @@ channels:
 dependencies:
 - coiled=0.0.39.1
 - dask=2021.5.0
-- dask-sql
+- dask-sql>=0.3.4
 - matplotlib
 - s3fs
