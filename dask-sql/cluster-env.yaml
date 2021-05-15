@@ -1,5 +1,5 @@
 channels:
 - conda-forge
 dependencies:
-- dask=2021.4.1
+- dask=2021.5.0
 - s3fs
