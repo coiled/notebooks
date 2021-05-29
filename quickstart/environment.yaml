@@ -2,4 +2,4 @@ channels:
 - conda-forge
 dependencies:
 - coiled=0.0.40
-- dask=2021.5.0
+- dask=2021.5.1
