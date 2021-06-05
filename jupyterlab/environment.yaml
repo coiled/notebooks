@@ -3,4 +3,4 @@ channels:
 dependencies:
 - traitlets=5.0.4
 - coiled=0.0.40
-- dask=2021.5.1
+- dask=2021.6.0
