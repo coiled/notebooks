@@ -3,7 +3,7 @@ channels:
 - pytorch
 - defaults
 dependencies:
-- dask=2021.6.0
+- dask=2021.6.2
 - coiled=0.0.41
 - numpy
 - pandas>=1.1.0
