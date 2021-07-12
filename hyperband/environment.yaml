@@ -10,7 +10,7 @@ dependencies:
 - skorch
 - scipy
 - matplotlib
-- pytorch>1.1.0
+- pytorch=1.7.1
 - s3fs
 - pip:
   # Can remove this pin when dask-ml > 1.8.0 is released.
