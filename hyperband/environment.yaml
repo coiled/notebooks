@@ -12,6 +12,4 @@ dependencies:
 - matplotlib
 - pytorch=1.7.1
 - s3fs
-- pip:
-  # Can remove this pin when dask-ml > 1.8.0 is released.
-  - git+https://github.com/dask/dask-ml@0ea276da1d78db582f40e1c256dfca4f70e6cbc6
+- dask-ml
