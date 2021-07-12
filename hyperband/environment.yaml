@@ -6,12 +6,10 @@ dependencies:
 - dask=2021.6.2
 - coiled=0.0.43
 - numpy
-- pandas>=1.1.0
+- pandas=1.2.5
 - skorch
 - scipy
 - matplotlib
-- pytorch>1.1.0
+- pytorch=1.8.1
 - s3fs
-- pip:
-  # Can remove this pin when dask-ml > 1.8.0 is released.
-  - git+https://github.com/dask/dask-ml@0ea276da1d78db582f40e1c256dfca4f70e6cbc6
+- dask-ml

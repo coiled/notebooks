@@ -3,3 +3,4 @@ channels:
 dependencies:
 - dask=2021.6.2
 - s3fs
+- pandas=1.2.5
