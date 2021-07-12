@@ -8,5 +8,6 @@ dependencies:
 - scikit-learn
 - xgboost
 - joblib
+- pandas=1.2.5
 - pip: 
   - dask-optuna

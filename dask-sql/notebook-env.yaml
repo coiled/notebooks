@@ -6,3 +6,4 @@ dependencies:
 - dask-sql>=0.3.4
 - matplotlib
 - s3fs
+- pandas=1.2.5
