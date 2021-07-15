@@ -1,6 +1,6 @@
 channels:
 - conda-forge
 dependencies:
-- dask=2021.6.2
+- dask=2021.7.0
 - s3fs
 - pandas=1.2.5
