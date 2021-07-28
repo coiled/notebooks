@@ -4,7 +4,7 @@ channels:
 - defaults
 dependencies:
 - dask=2021.7.1
-- coiled=0.0.44
+- coiled=0.0.45
 - numpy
 - pandas>=1.3.0
 - skorch
