@@ -1,7 +1,7 @@
 channels:
 - conda-forge
 dependencies:
-- coiled=0.0.46
+- coiled=0.0.47
 - dask=2021.7.2
 - dask-sql>=0.3.4
 - matplotlib
