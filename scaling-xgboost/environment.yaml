@@ -10,5 +10,6 @@ dependencies:
 - dask-ml
 - dask-xgboost
 - scikit-learn
-- s3fs>=2021.08.0
+- s3fs
 - matplotlib
+- aiobocore<1.4.0
