@@ -12,3 +12,4 @@ dependencies:
 - scikit-learn
 - s3fs
 - matplotlib
+- aiobocore<1.4.0
