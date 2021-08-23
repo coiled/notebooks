@@ -13,4 +13,3 @@ dependencies:
 - pytorch=1.8.1
 - s3fs
 - dask-ml
-- aiobotocore<1.4.0
