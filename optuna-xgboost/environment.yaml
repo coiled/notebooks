@@ -1,8 +1,8 @@
 channels:
 - conda-forge
 dependencies:
-- dask=2021.8.0
-- coiled=0.0.47
+- dask=2021.8.1
+- coiled=0.0.50
 - optuna=2.3.0
 - numpy
 - scikit-learn
