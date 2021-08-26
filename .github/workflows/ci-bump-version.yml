@@ -1,8 +1,6 @@
 name: Check for new Coiled and dask versions on conda-forge
 
-on:
-  schedule:
-    - cron: "36 * * * *"
+on: push
 
 jobs:
   check-version:
