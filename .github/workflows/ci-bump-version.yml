@@ -23,7 +23,7 @@ jobs:
         with:
           find: "coiled=[.0-9]+"
           replace: "coiled=${{ steps.latest_version_coiled.outputs.version }}"
-          include: .+\.ya?ml|.+\.ipynb
+          include: .+\.ipynb
           exclude: ^\.git.*
 
       - name: Get latest dask version
@@ -39,7 +39,7 @@ jobs:
         with:
           find: "dask=[.0-9]+"
           replace: "dask=${{ steps.latest_version_dask.outputs.version }}"
-          include: .+\.ya?ml|.+\.ipynb
+          include: .+\.ipynb
           exclude: ^\.git.*
 
 
