@@ -25,7 +25,7 @@ jobs:
         with:
           find: "coiled=[.0-9]+"
           replace: "coiled=${{ steps.latest_version_coiled.outputs.version }}"
-          include: .+\.ya?ml
+          include: .+\.ya?ml|.+\.ipynb
           exclude: ^\.git.*
 
       - name: Get latest dask version
@@ -41,18 +41,18 @@ jobs:
         with:
           find: "dask=[.0-9]+"
           replace: "dask=${{ steps.latest_version_dask.outputs.version }}"
-          include: .+\.ya?ml
+          include: .+\.ya?ml|.+\.ipynb
           exclude: ^\.git.*
 
 
       - name: Output changed files
         run: |
-          echo ${{ steps.find_and_replace_coiled.outputs.modifiedFiles }}
-          echo ${{ steps.find_and_replace_dask.outputs.modifiedFiles }}
+          echo ${{ steps.find_and_replace_coiled.outputs.modifiedFiles }} || echo ${{ steps.find_and_replace_dask.outputs.modifiedFiles }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v2
+        uses: peter-evans/create-pull-request@v3
         with:
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Update Coiled version to ${{ steps.latest_version_coiled.outputs.version }}, update dask version to ${{ steps.latest_version_dask.outputs.version }}"
           title: "Update Coiled version to ${{ steps.latest_version_coiled.outputs.version }}, update dask version to ${{ steps.latest_version_dask.outputs.version }}"
