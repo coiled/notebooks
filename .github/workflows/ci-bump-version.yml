@@ -45,8 +45,7 @@ jobs:
 
       - name: Output changed files
         run: |
-          echo ${{ steps.find_and_replace_coiled.outputs.modifiedFiles }}
-          echo ${{ steps.find_and_replace_dask.outputs.modifiedFiles }}
+          echo ${{ steps.find_and_replace_coiled.outputs.modifiedFiles }} || echo ${{ steps.find_and_replace_dask.outputs.modifiedFiles }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2
