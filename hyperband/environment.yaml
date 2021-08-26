@@ -11,6 +11,5 @@ dependencies:
 - scipy
 - matplotlib
 - pytorch=1.8.1
-- s3fs
+- s3fs>=2021.8.0
 - dask-ml
-- aiobotocore<1.4.0
