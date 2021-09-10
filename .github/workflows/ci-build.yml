@@ -20,13 +20,16 @@ jobs:
             "hyperband",
             "dask-sql",
           ]
-        server: ["https://cloud.coiled.io", "https://staging.coiledhq.com"]
+        server: ["https://cloud.coiled.io", "https://staging.coiledhq.com", "https://development.coiledhq.com"]
         include:
           - server: "https://cloud.coiled.io"
             token-name: CLOUD_TOKEN
 
           - server: "https://staging.coiledhq.com"
             token-name: SANDBOX_TOKEN
+
+          - server: "https://development.coiledhq.com"
+            token-name: DEV_TOKEN
     env:
       DASK_COILED__SERVER: ${{ matrix.server }}
       DASK_COILED__TOKEN: ${{ secrets[matrix.token-name] }}
